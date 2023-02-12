@@ -23,9 +23,9 @@
             <a class="logo" href="./index.html">Web<span class="accent">studio</span></a>
             <nav>
                 <ul class="list nav-list">
-                    <li><a class="nav-link link" href="./index.html">Studio</a></li>
-                    <li><a class="nav-link link" href="./portfolio.html">Portfolio</a></li>
-                    <li><a class="nav-link link" href="#">Contacts</a></li>
+                    <li><a class="link nav-link current" href="./index.html">Studio</a></li>
+                    <li><a class="link nav-link" href="./portfolio.html">Portfolio</a></li>
+                    <li><a class="link nav-link" href="#">Contacts</a></li>
                 </ul>
             </nav>
             <address class="address">
@@ -41,7 +41,7 @@
         <section class="section-slogan"> 
             <div class="container">
                 <h1 class="slogan-title">Effective Solutions For Your Business</h1>
-                <button class="button-order button" type="button">Order Service</button>
+                <button class="button-order button" data-modal-open type="button">Order Service</button>
             </div>
         </section>
 
@@ -389,6 +389,20 @@
         </footer>
              
     </main>
+
+    <!-- Modal window -->
+
+    <div class="backdrop" data-modal>
+        <div class="modal">
+            <button class="modal-btn" type="button" data-modal-close>
+                <svg class="modal-icon" width="8" height="8">
+                  <use href="./images/icons.svg#icon-close"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script src="./js/modal.js"></script>
 
 </body>
 </html>
