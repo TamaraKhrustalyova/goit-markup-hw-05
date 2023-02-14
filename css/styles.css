@@ -17,8 +17,6 @@
     --trns: 400ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Animations */
-
 /* Base styles */
 
 h1,
@@ -437,25 +435,29 @@ body {
 }
 
 .overlay {
+    position: relative;
+    overflow: hidden;   
+}
+
+.overlay-card {
     position: absolute;
     width: 360px;
     height: 300px;
     top: 0px;
     left: 0px;
-    background-color: #4D5AE5;
-    padding: 40px 32px 164px 32px;
-    color: var(--white-txt-cl);
-}
-
-/* .portfolio-item:hover .overlay
-.portfolio-item:focus .overlay {
-    animation: move-up;
-} */
-
-.card-text {
     line-height: calc(24 / 16);
     color: #F4F4FD;
+    background-color: #4D5AE5;
+    padding: 40px 32px 164px 32px;
+    transform: translateY(100%);
+    transition: transform var(--trns);
 }
+
+.portfolio-link:hover .overlay-card,
+.portfolio-link:focus .overlay-card {
+    transform: translateY(0);
+}
+
 
 /* Section footer */
 
@@ -521,6 +523,8 @@ body {
     width: 100%;
     height: 100%;
     background-color: rgba(46, 47, 66, 0.4);
+    transition: opacity var(--trns), visibility var(--trns);
+    transition-delay: 250ms;
 }
 
 .backdrop.is-hidden {
@@ -540,6 +544,14 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    transition: transform 750ms ease;
+}
+
+.backdrop.is-hidden .modal {
+    transform: scale(0.5);
+    opacity: 0.25; 
+   
 }
 
 .modal-btn {
